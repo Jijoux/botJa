@@ -25,9 +25,18 @@ const { Client, Events, GatewayIntentBits, REST, Routes } = require('discord.js'
 
       // Command callback that will be executed
       callback: async interaction => {
-        await interaction.reply('Polo!');
+        await interaction.reply('polo!');
       }
-    }
+    },
+      {
+        name: 'polo',
+	  description: 'Replies with Marco!',
+	  callback: async interaction => {
+		await interaction.reply('Marco!');
+	
+      }},
+      
+  
   ];
 
   // Register commands to Discord
@@ -64,7 +73,6 @@ const { Client, Events, GatewayIntentBits, REST, Routes } = require('discord.js'
     // Execute the "callback" function corresponding to the command, and pass the "interaction" object to it
     await command.callback(interaction);
   });
-
   // Log in to Discord with your client's token.
   client.login(process.env.DISCORD_TOKEN);
 })();
