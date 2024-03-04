@@ -15,30 +15,7 @@ const { Client, Events, GatewayIntentBits, REST, Routes } = require('discord.js'
 
 
   // Define the commands
-  const commands = [
-    {
-      // Command name (for "/<NAME>")
-      name: 'marco',
-
-      // Command description that will be show when the user type "/"
-      description: 'Replies with Polo!',
-
-      // Command callback that will be executed
-      callback: async interaction => {
-        await interaction.reply('polo!');
-      }
-    },
-      {
-        name: 'polo',
-	  description: 'Replies with Marco!',
-	  callback: async interaction => {
-		await interaction.reply('Marco!');
-	
-      }},
-      
-  
-  ];
-
+  const commands = require('./commands');
   // Register commands to Discord
   const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
   console.log('Registering commands');
